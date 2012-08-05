@@ -42,7 +42,7 @@ function createworld() {
 
                //grid of bushes
             if((i % 2 === 0) && (j % 2 === 0)) {
-                Crafty.e("2D, DOM, solid, bush1")
+                Crafty.e("2D, DOM, solid, bush3")
                     .attr({x: i * 16, y: j * 16, z: 2000})
             }
         }
@@ -56,11 +56,15 @@ function createworld() {
 			    Crafty.init(400, 336);
 			    Crafty.background('#ccc');
 			    Crafty.canvas.init();
+
 			    
 
 Crafty.scene("loading", function () {
     //load takes an array of assets and a callback when complete
-    Crafty.load(["images/bananabomber-sprites.png"], function () {
+    Crafty.load([
+    	"images/bananabomber-sprites.png",
+    	"images/bomb_party_v4.png"
+    ], function () {
         Crafty.scene("main"); //when everything is loaded, run the main scene
     });
 
@@ -89,6 +93,10 @@ Crafty.sprite(16, "images/bananabomber-sprites.png", {
     enemy: [0, 3],
     banana: [4, 0],
     empty: [4, 0]
+});
+
+Crafty.sprite(16, "images/bomb_party_v4.png", {
+	bush3: [9, 13]
 });
 
 createworld();

@@ -46,6 +46,7 @@ var Player = function() {
 
 var player1 = Crafty.e("2D, DOM, player, Player, PlayerControls, BombDropper")
         .attr({ x: 16, y: 304, z: 1 })
-        .css({ 'border': '1px solid #f0f', 'z-index' : '99'});
+        .css({ 'border': '1px solid #f0f', 'z-index' : '99'})
+        //.tint("#969696", 0.3);
 
 }
